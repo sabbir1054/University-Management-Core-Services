@@ -10,12 +10,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model AcademicSemester {
   id         String    @id @default(uuid())
   year       Int
-  title      String
-  code       String
+  title      String    @unique
+  code       String    @unique
   startMonth String
   endMonth   String
   createdAt  DateTime  @default(now())
